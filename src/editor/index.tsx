@@ -734,6 +734,7 @@ class Editor extends React.Component<EditorProps, EditorState> {
         onDrop={this.handleDrop}
       >
         <NavigationBar visible={isShowMenu} left={getPluginAt('left')} right={getPluginAt('right')} />
+        {children}
         <div className="editor-container">
           {showHideMenu && (
             <ToolBar>
@@ -746,7 +747,6 @@ class Editor extends React.Component<EditorProps, EditorState> {
               </span>
             </ToolBar>
           )}
-          {children}
           <section className={`section sec-md ${view.md ? 'visible' : 'in-visible'}`}>
             <textarea
               id={editorId}

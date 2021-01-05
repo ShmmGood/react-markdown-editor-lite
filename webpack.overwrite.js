@@ -66,7 +66,7 @@ module.exports = config => {
         compiler.hooks.afterEmit.tap('BundleDTS', () => {
           glob("./lib/**/*.d.ts", null, function (er, files) {
             dts.bundle({
-              name: "react-markdown-editor-lite",
+              name: "react-markdown-editor-lite-laowan",
               main: "lib/index.d.ts",
               baseDir: "lib",
               out: "temp_dts.tmp",
