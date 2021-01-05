@@ -722,7 +722,7 @@ class Editor extends React.Component<EditorProps, EditorState> {
     const { view, fullScreen } = this.state;
     const getPluginAt = (at: string) => this.state.plugins[at] || [];
     const isShowMenu = !!view.menu;
-    const { id } = this.props;
+    const { id, children } = this.props;
     const editorId = id ? `${id}_md` : undefined;
     const previewerId = id ? `${id}_html` : undefined;
     return (
@@ -746,6 +746,7 @@ class Editor extends React.Component<EditorProps, EditorState> {
               </span>
             </ToolBar>
           )}
+          {children}
           <section className={`section sec-md ${view.md ? 'visible' : 'in-visible'}`}>
             <textarea
               id={editorId}
